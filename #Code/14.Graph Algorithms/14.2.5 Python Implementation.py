@@ -24,7 +24,7 @@ class Graph:
     #------------------------- nested Edge class -------------------------
     class Edge:
         """Lightweight edge structure for a graph."""
-        __slot__ = '_origin','_destination','_element'
+        __slots__ = '_origin','_destination','_element'
 
         def __init__(self,u,v,x):
             """Do not call constructor directly.
@@ -40,7 +40,7 @@ class Graph:
 
         def opposite(self,v):
             """Return the vertex that is opposite v on this edge."""
-            return self._destination
+            return self._destination if v is self._origin else self._origin
 
         def element(self):
             """Return element associated with this edge."""
@@ -66,7 +66,7 @@ class Graph:
         contents.
         """
         return self._incoming is not self._outgoing
-        """ directed if maps are distinct"""
+        # directed if maps are distinct
 
     def vertex_count(self):
         """Return the number of vertices in the graph."""
@@ -103,11 +103,10 @@ class Graph:
 
     def incident_edges(self,v,outgoing=True):
         """Return all (outgoing) edges incedent to vertex v in the graph.
-
         If graph is directed, optional parameter used to request incoming edges.
         """
         adj = self._outgoing if outgoing else self._incoming
-        for edge in adj[j].values():
+        for edge in adj[v].values():
             yield edge
 
     def insert_vertex(self,x=None):
@@ -118,10 +117,60 @@ class Graph:
             self._incoming[v] = {}      # need distinct map for incoming edges
         return v
 
-    def insert_edge(self):
+    def insert_edge(self,u,v,x=None):
         """Insert and return a new Edge from u to v with auxiliary element x."""
-        e = self.Edge(u,v,x)
+        e = self.Edge(u, v, x)
         self._outgoing[u][v] = e
-        self._incoming[u][v] = e
+        self._incoming[v][u] = e
 
 #------------------------------ my main function ------------------------------
+
+G = Graph()
+
+'''Let us generate the graph in this section! '''
+
+u = G.insert_vertex('vertex: u')
+v = G.insert_vertex('vertex: v')
+w = G.insert_vertex('vertex: w')
+z = G.insert_vertex('vertex: z')
+
+e = G.insert_edge(u,v,'edge: e')
+f = G.insert_edge(v,w,'edge: f')
+g = G.insert_edge(u,w,'edge: g')
+h = G.insert_edge(w,z,'edge: h')
+i = G.insert_edge(u,z,'edge: LiuPeng :)')
+
+# Let us test out graph G
+
+Gi = G.vertices()
+Gii = iter(Gi)
+
+print(Gii.__next__()._element)
+print(u._element)
+
+print(Gii.__next__()._element)
+print(v._element)
+
+print(Gii.__next__()._element)
+print(w._element)
+
+print(Gii.__next__()._element)
+print(z._element)
+
+print('')
+
+VertexList = list(G._outgoing.keys())
+
+
+for i in VertexList:
+    VertexAdj = list(G.incident_edges(i))
+    guard = True
+    for j in range(len(VertexAdj)):
+        if(guard):
+            sign = i._element
+        else:
+            sign = 'o------->'
+        print(sign,VertexAdj[j].opposite(i)._element,\
+              G.get_edge(i,VertexAdj[j].opposite(i))._element)
+        guard = False
+    print('')
