@@ -1,20 +1,49 @@
 # Data_Structure_and_Algorithm_Report
 云南大学数学与统计学院陆正福教授开展的数据结构与算法实验课的实验报告。
 
-     _      _  _    _    _        _   _                  _                 
-    | |    (_)| |  | |  | |      | \ | |                | |                
-    | |     _ | |_ | |_ | |  ___ |  \| |  ___ __      __| |_   ___   _ __  
-    | |    | || __|| __|| | / _ \| . ` | / _ \\ \ /\ / /| __| / _ \ | '_ \ 
-    | |____| || |_ | |_ | ||  __/| |\  ||  __/ \ V  V / | |_ | (_) || | | |
-    \_____/|_| \__| \__||_| \___|\_| \_/ \___|  \_/\_/   \__| \___/ |_| |_|
+## 1. 建库说明
 
+DSA作为高级编程的基础，有必要深入研究。这个Repo是在期末考试提交的基础上建立的，具体过程中的commit并不能完整呈现，稍有遗憾。
 
+本库中所有源代码都是Python 3，可以用WingIDE或者Spyder、Visual Studio等集成开发环境进行调试，Python 3用Anaconda进行包管理。
+
+## 2. 参考资料
+
+```endnote
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). the United States: The MIT Press.
+
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2013). 算法导论 (3rd ed.). 北京: 机械工业出版社.
+
+Goodrich, M. T., Tamassia, R., & Goldwasser, M. H. (2013). Data Structures and Algorithms in Python. U.S: Wiley & Sons, Inc.
+
+Weiss, M. A. (2004). 数据结构与算法分析：C语言描述 (冯舜玺, Trans. 2nd ed.). 北京: 机械工业出版社.
+```
+上述四份资料在我的EndNote资料库中都有，如果有需要电子版的可以在issue里留言，我可以提供私人链接以供私人暂时性学习，为尊重版权，这里不放public link。
+
+## 3. 目录说明
+
+```
+./
+├─#Code                 # 存放源代码，主要是参考资料3给出的源码
+├─#Code_Fragment        # 代码截图，因为有部分代码在/.Word的翻译里面需要，所以就用截图的方式呈现以保证与课本一致
+├─#Example              # 书中例子的截图
+├─#Figure               # 书中图示、概念图的截图
+├─#Illustration         # 我的插图，用Visio打开
+├─#Table                # 书中table的截图
+├─#Thinking             # 陆老师的课后思考题
+├─Book                  # 参考资料3的Word重置版（并不完美）
+├─PDF                   # 实验报告的导出PDF版
+└─Word                  # 实验报告的Word工程文件
+```
+
+## 4. 前作更新说明（无修正）
+
+``` perl
 /*--------------------------- version 1 update log ---------------------------*/
 
         为了促进数据结构与算法课的学习，防止像上学期《离散数学》那样的情况再次发
     生，我对教材进行了部分翻译。
 
-    /*
     * 位置：这些实验报告后面有对于书中关键章节的部分翻译。以后会继续进行，我将尽
     力将文件翻译得全面准确
 
@@ -65,3 +94,4 @@
     次新的排版，更换为了EmEditor。商业软件，需要crack。
 
     2017-05-14
+```
