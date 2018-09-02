@@ -1,0 +1,1 @@
+Screenshots of the program running.

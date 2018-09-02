@@ -1,0 +1,1 @@
+All the figures may be need for creating .docx file.
